@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : PhysicsBase
+
 {
+    //variable that tracks how much the enemy has moved to one side
+    public int moved; 
+    // how much an enemy moves at a time
+    public int moveAmount;
     // Start is called before the first frame update
     void Start()
     {
+        moved = 0;
+        moveAmount = -5;
         
     }
 
@@ -15,7 +22,13 @@ public class EnemyController : PhysicsBase
     {
         // move to the left
         if(grounded){
-            desiredx = -5;
+            //if the enemy has already moved 20 times in one direction, move it the opisite direction
+            if(moved > 20){
+                moveAmount = moveAmount*(-1);
+                moved = 0;
+            }
+            desiredx = moveAmount;
+            moved++;
         }
     }
 }
