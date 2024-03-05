@@ -13,6 +13,6 @@ public class EnemyController : PhysicsBase
     // Update is called once per frame
     void Update()
     {
-        
+        desiredx = -1;
     }
 }
