@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float ttl;
-    public GameObject owner;
+    public GameObject bullet;
     public bool isPlayer;
     public float damage;
     // Start is called before the first frame update

@@ -6,12 +6,13 @@ using System.Collections;
 public class PlayerController : PhysicsBase
 {
 
-     private bool isMouseDragging = false;
+    private bool isMouseDragging = false;
     private Vector2 startPoint;
     private Vector2 dragVector;
     public int maxPowerDrag = 50;
     public GameObject bullet;
     public float maxBulletSpeed = 40f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -106,7 +107,7 @@ public class PlayerController : PhysicsBase
     	bc.damage = 20;
     	bc.isPlayer = true;
     	bc.ttl = 3f;
-    	bc.owner = gameObject;
+    	bc.bullet = gameObject;
     	bc.startSelfDestruct();
     }
     
