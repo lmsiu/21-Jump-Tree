@@ -39,7 +39,7 @@ public class PlayerController : PhysicsBase
             startPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         }
 
-        // Shooting
+        // Shooting Controll
         if (Input.GetMouseButtonUp(0))
         {
             if (dragVector.magnitude != 0.0)
