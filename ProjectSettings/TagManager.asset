@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - lethal
+  - seed
   layers:
   - Default
   - TransparentFX

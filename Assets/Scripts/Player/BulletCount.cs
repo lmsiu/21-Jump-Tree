@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class BulletCount : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static int seedCount = 0; 
+
+    public TextMeshProUGUI seedText;
+
+    void Awake()
     {
+        seedCount = 0;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        Debug.Log("Seed Count: " + seedCount);
+        seedText.text = "x " + seedCount;
+    }   
 }

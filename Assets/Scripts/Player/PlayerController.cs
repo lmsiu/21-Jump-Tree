@@ -5,6 +5,7 @@ using System.Collections;
 
 public class PlayerController : PhysicsBase
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,4 +47,14 @@ public class PlayerController : PhysicsBase
     {
 
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("seed"))
+        {
+            BulletCount.seedCount++;
+            Destroy(other.gameObject);
+        }
+    }
+
 }
