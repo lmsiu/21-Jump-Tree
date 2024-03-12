@@ -10,7 +10,7 @@ public class PlayerController : PhysicsBase
     private Vector2 startPoint;
     private Vector2 dragVector;
     public int maxPowerDrag = 50;
-    public GameObject bullet;
+    public GameObject owner;
     public float maxBulletSpeed = 40f;
 
     // Start is called before the first frame update
@@ -92,24 +92,5 @@ public class PlayerController : PhysicsBase
 
     // for game over screen
     //https://www.youtube.com/watch?v=0ZJPmjA5Hv0
-
-
-    
-   
-    // shooting
-    void shoot(Vector2 direction)
-    {
-        Vector2 velocity = direction.normalized * (dragVector.magnitude / maxPowerDrag) * maxBulletSpeed;
-        print(transform.position);
-    	GameObject b = Instantiate(bullet, transform.position + (new Vector3(direction.normalized.x, direction.normalized.y, 0) * 0.7f), Quaternion.Euler(0, 0, 0));
-    	b.GetComponent<Rigidbody2D>().velocity = velocity;
-    	BulletController bc = b.GetComponent<BulletController>();
-    	bc.damage = 20;
-    	bc.isPlayer = true;
-    	bc.ttl = 3f;
-    	bc.bullet = gameObject;
-    	bc.startSelfDestruct();
-    }
-    
 
 }
