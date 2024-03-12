@@ -61,7 +61,7 @@ public class PlayerController : PhysicsBase
     	bc.isPlayer = true;
     	bc.ttl = 3f;
     	bc.owner = gameObject;
-    	bc.startSelfDestruct();
+        bc.startSelfDestruct();
     }
     
 }
