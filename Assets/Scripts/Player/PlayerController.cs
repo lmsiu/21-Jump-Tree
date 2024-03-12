@@ -9,9 +9,12 @@ public class PlayerController : PhysicsBase
     private bool isMouseDragging = false;
     private Vector2 startPoint;
     private Vector2 dragVector;
-    public int maxPowerDrag = 50;
-    public GameObject owner;
+    public int maxDrag = 50;
+    // Shooting variables
     public float maxBulletSpeed = 40f;
+
+    public float damage = 20f;
+    public float ttl = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,18 +33,28 @@ public class PlayerController : PhysicsBase
         if (Input.GetButton("Jump") && grounded) velocity.y = 6.5f;
     
     
-        // shooting
-        if (Input.GetMouseButtonDown(0))
+          if (Input.GetMouseButtonDown(0))
         {
             isMouseDragging = true;
             startPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         }
 
+        // Shooting
         if (Input.GetMouseButtonUp(0))
         {
             if (dragVector.magnitude != 0.0)
             {
-                shoot(-dragVector);
+                Vector2 direction = new Vector2(0, 0);
+                if (dragVector.magnitude > maxDrag)
+                {
+                    direction = -dragVector.normalized;
+                }
+                else
+                {
+                    direction = -dragVector / maxDrag;
+                }
+                Vector2 velocity = direction * maxBulletSpeed;
+                gameObject.GetComponent<ShooterScript>().shoot(velocity, damage, true, ttl, gameObject);
             }
             isMouseDragging = false;
             dragVector = new Vector2(0, 0);
