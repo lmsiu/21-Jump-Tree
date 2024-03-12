@@ -39,6 +39,8 @@ public class PlayerController : PhysicsBase
             startPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         }
 
+        // animate the player movement 
+
         // Shooting Controll
         if (Input.GetMouseButtonUp(0))
         {
