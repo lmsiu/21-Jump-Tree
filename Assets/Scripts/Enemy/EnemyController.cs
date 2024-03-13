@@ -9,11 +9,14 @@ public class EnemyController : PhysicsBase
     // public int moved; 
     // // how much an enemy moves at a time
     // public int moveAmount;
+    public float minMove = 2f;
+    public float maxMove = 3f;
     // Start is called before the first frame update
     void Start()
     {
-        // moved = 0;
-        // moveAmount = -5;
+        // start positionis the min movement
+        minMove = transform.position.x;
+        maxMove = transform.position.x+3;
 
         desiredx = 3;
         
@@ -32,6 +35,9 @@ public class EnemyController : PhysicsBase
         //     desiredx = moveAmount;
         //     moved++;
         // }
+
+        transform.position =new Vector3(Mathf.PingPong(Time.time*2,maxMove-minMove)+minMove, transform.position.y, transform.position.z);
+
     }
 
     public override void CollideHorizontal(Collider2D other)
