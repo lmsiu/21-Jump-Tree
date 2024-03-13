@@ -11,12 +11,14 @@ public class EnemyController : PhysicsBase
     // public int moveAmount;
     public float minMove = 2f;
     public float maxMove = 3f;
+    // how much to move by
+    public static int MOVEAMOUNT = 3;
     // Start is called before the first frame update
     void Start()
     {
         // start positionis the min movement
         minMove = transform.position.x;
-        maxMove = transform.position.x+3;
+        maxMove = transform.position.x+MOVEAMOUNT;
 
         desiredx = 3;
         
@@ -25,17 +27,8 @@ public class EnemyController : PhysicsBase
     // Update is called once per frame
     void Update()
     {
-        // move to the left
-        // if(grounded){
-        //     //if the enemy has already moved 20 times in one direction, move it the opisite direction
-        //     if(moved > 20){
-        //         moveAmount = moveAmount*(-1);
-        //         moved = 0;
-        //     }
-        //     desiredx = moveAmount;
-        //     moved++;
-        // }
 
+        // move back and forth
         transform.position =new Vector3(Mathf.PingPong(Time.time*2,maxMove-minMove)+minMove, transform.position.y, transform.position.z);
 
     }

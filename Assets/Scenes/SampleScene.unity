@@ -1647,6 +1647,8 @@ MonoBehaviour:
   gravityFactor: 1
   desiredx: 0
   grounded: 0
+  minMove: 2
+  maxMove: 3
 --- !u!50 &1532433550
 Rigidbody2D:
   serializedVersion: 4
