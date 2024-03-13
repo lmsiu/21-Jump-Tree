@@ -5,11 +5,9 @@ using UnityEngine;
 public class EnemyController : PhysicsBase
 
 {
-    //variable that tracks how much the enemy has moved to one side
-    // public int moved; 
-    // // how much an enemy moves at a time
-    // public int moveAmount;
+    // Min position that the enemy can move to
     public float minMove = 2f;
+    // Max position that the enemy can move to
     public float maxMove = 3f;
     // how much to move by
     public static int MOVEAMOUNT = 3;
