@@ -22,7 +22,6 @@ public class ShooterScript : MonoBehaviour
     {
         GameObject b = Instantiate(bullet, transform.position + (new Vector3(velocity.normalized.x, velocity.normalized.y, 0) * 0.7f), Quaternion.Euler(0, 0, 0));
         b.GetComponent<Rigidbody2D>().velocity = velocity;
-        b.tag = "bullet";
         BulletController bc = b.GetComponent<BulletController>();
         bc.damage = damage;
         bc.isPlayer = isPlayer;
