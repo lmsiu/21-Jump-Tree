@@ -33,7 +33,6 @@ public class EnemyController : PhysicsBase
 
     public override void CollideHorizontal(Collider2D other)
     {
-        System.Console.WriteLine("hit sideways");
         if(other.gameObject.CompareTag("bullet"))
         {
             Destroy(gameObject);
