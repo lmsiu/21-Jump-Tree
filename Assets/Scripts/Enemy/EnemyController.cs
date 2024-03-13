@@ -5,15 +5,18 @@ using UnityEngine;
 public class EnemyController : PhysicsBase
 
 {
-    //variable that tracks how much the enemy has moved to one side
-    // public int moved; 
-    // // how much an enemy moves at a time
-    // public int moveAmount;
+    // Min position that the enemy can move to
+    public float minMove = 2f;
+    // Max position that the enemy can move to
+    public float maxMove = 3f;
+    // how much to move by
+    public static int MOVEAMOUNT = 3;
     // Start is called before the first frame update
     void Start()
     {
-        // moved = 0;
-        // moveAmount = -5;
+        // start positionis the min movement
+        minMove = transform.position.x;
+        maxMove = transform.position.x+MOVEAMOUNT;
 
         desiredx = 3;
         
@@ -22,21 +25,18 @@ public class EnemyController : PhysicsBase
     // Update is called once per frame
     void Update()
     {
-        // move to the left
-        // if(grounded){
-        //     //if the enemy has already moved 20 times in one direction, move it the opisite direction
-        //     if(moved > 20){
-        //         moveAmount = moveAmount*(-1);
-        //         moved = 0;
-        //     }
-        //     desiredx = moveAmount;
-        //     moved++;
-        // }
+
+        // move back and forth
+        transform.position =new Vector3(Mathf.PingPong(Time.time*2,maxMove-minMove)+minMove, transform.position.y, transform.position.z);
+
     }
 
     public override void CollideHorizontal(Collider2D other)
     {
-        desiredx = -desiredx;
+        if(other.gameObject.CompareTag("bullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
