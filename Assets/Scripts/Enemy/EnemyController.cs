@@ -33,7 +33,10 @@ public class EnemyController : PhysicsBase
 
     public override void CollideHorizontal(Collider2D other)
     {
-        desiredx = -desiredx;
+        if(other.gameObject.CompareTag("bullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
