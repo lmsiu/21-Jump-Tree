@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 
 public class PlayerController : PhysicsBase
 {
@@ -16,7 +15,7 @@ public class PlayerController : PhysicsBase
     public float damage = 20f;
     public float ttl = 3f;
 
-    private float originalSpeed = 3f; // 假设原始移动速度为3
+    private float originalSpeed = 3f; // set original speed as 3
     private float currentSpeed;
 
     // Start is called before the first frame update
@@ -87,7 +86,7 @@ public class PlayerController : PhysicsBase
         }
         else if (other.gameObject.CompareTag("Sap"))
         {
-            StartCoroutine(SlowDownSpeed(5f)); // 5秒后恢复正常速度
+            StartCoroutine(SlowDownSpeed(5f)); // after 5s back to normal speed
         }
     }
 
@@ -116,9 +115,9 @@ public class PlayerController : PhysicsBase
 
     IEnumerator SlowDownSpeed(float duration)
     {
-        currentSpeed = originalSpeed / 2; // 将当前速度设置为原始速度的一半
+        currentSpeed = originalSpeed / 2; 
         yield return new WaitForSeconds(duration);
-        currentSpeed = originalSpeed; // 恢复原始速度
+        currentSpeed = originalSpeed; 
     }
 
     // for game over screen
