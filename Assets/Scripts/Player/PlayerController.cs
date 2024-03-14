@@ -16,10 +16,14 @@ public class PlayerController : PhysicsBase
     public float damage = 20f;
     public float ttl = 3f;
 
+    private float originalSpeed = 3f; // 假设原始移动速度为3
+    private float currentSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Starting game");
+        currentSpeed = originalSpeed;
     }
 
     // Update is called once per frame
@@ -27,8 +31,8 @@ public class PlayerController : PhysicsBase
     {
         // moving
         desiredx = 0;
-        if (Input.GetAxis("Horizontal") > 0) desiredx = 3;
-        if (Input.GetAxis("Horizontal") < 0) desiredx = -3;
+        if (Input.GetAxis("Horizontal") > 0) desiredx = currentSpeed;
+        if (Input.GetAxis("Horizontal") < 0) desiredx = -currentSpeed;
 
         if (Input.GetButton("Jump") && grounded) velocity.y = 6.5f;
     
@@ -81,6 +85,10 @@ public class PlayerController : PhysicsBase
                 StartCoroutine(getHurt());
             }
         }
+        else if (other.gameObject.CompareTag("Sap"))
+        {
+            StartCoroutine(SlowDownSpeed(5f)); // 5秒后恢复正常速度
+        }
     }
 
     // Visualizatin of Hearts decreasing
@@ -103,6 +111,14 @@ public class PlayerController : PhysicsBase
             BulletCount.seedCount++;
             Destroy(other.gameObject);
         }
+
+    }
+
+    IEnumerator SlowDownSpeed(float duration)
+    {
+        currentSpeed = originalSpeed / 2; // 将当前速度设置为原始速度的一半
+        yield return new WaitForSeconds(duration);
+        currentSpeed = originalSpeed; // 恢复原始速度
     }
 
     // for game over screen
