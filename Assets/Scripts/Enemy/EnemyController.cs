@@ -38,5 +38,4 @@ public class EnemyController : PhysicsBase
             Destroy(gameObject);
         }
     }
-
 }
