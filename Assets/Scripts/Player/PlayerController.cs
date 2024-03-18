@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 
 public class PlayerController : PhysicsBase
 {
@@ -16,10 +15,14 @@ public class PlayerController : PhysicsBase
     public float damage = 20f;
     public float ttl = 3f;
 
+    private float originalSpeed = 3f; // set original speed as 3
+    private float currentSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Starting game");
+        currentSpeed = originalSpeed;
     }
 
     // Update is called once per frame
@@ -27,8 +30,8 @@ public class PlayerController : PhysicsBase
     {
         // moving
         desiredx = 0;
-        if (Input.GetAxis("Horizontal") > 0) desiredx = 3;
-        if (Input.GetAxis("Horizontal") < 0) desiredx = -3;
+        if (Input.GetAxis("Horizontal") > 0) desiredx = currentSpeed;
+        if (Input.GetAxis("Horizontal") < 0) desiredx = -currentSpeed;
 
         if (Input.GetButton("Jump") && grounded) velocity.y = 6.5f;
     
@@ -81,6 +84,10 @@ public class PlayerController : PhysicsBase
                 StartCoroutine(getHurt());
             }
         }
+        else if (other.gameObject.CompareTag("Sap"))
+        {
+            StartCoroutine(SlowDownSpeed(5f)); // after 5s back to normal speed
+        }
     }
 
     // Visualizatin of Hearts decreasing
@@ -103,6 +110,14 @@ public class PlayerController : PhysicsBase
             BulletCount.seedCount++;
             Destroy(other.gameObject);
         }
+
+    }
+
+    IEnumerator SlowDownSpeed(float duration)
+    {
+        currentSpeed = originalSpeed / 2; 
+        yield return new WaitForSeconds(duration);
+        currentSpeed = originalSpeed; 
     }
 
     // for game over screen
