@@ -8,7 +8,7 @@ TagManager:
   - lethal
   - seed
   - bullet
-  - Sap
+  - Undefined
   layers:
   - Default
   - TransparentFX
