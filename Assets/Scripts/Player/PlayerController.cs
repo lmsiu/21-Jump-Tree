@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerController : PhysicsBase
+public class PlayerController : MonoBehaviour
 {
 
     private bool isMouseDragging = false;
@@ -17,6 +20,7 @@ public class PlayerController : PhysicsBase
 
     private float originalSpeed = 5f; // set original speed as 5
     private float currentSpeed;
+    private bool isgrounded = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +33,17 @@ public class PlayerController : PhysicsBase
     void Update()
     {
         // moving
-        desiredx = 0;
-        if (Input.GetAxis("Horizontal") > 0) desiredx = currentSpeed;
-        if (Input.GetAxis("Horizontal") < 0) desiredx = -currentSpeed;
+        Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
+        if (Input.GetAxis("Horizontal") > 0.001) currentVelocity.x = currentSpeed;
+        if (Input.GetAxis("Horizontal") < -0.001) currentVelocity.x = -currentSpeed;
+        if (math.abs(Input.GetAxis("Horizontal")) < 0.001) currentVelocity.x = 0;
 
-        if (Input.GetButton("Jump") && grounded) velocity.y = 8.5f;
-    
+        if (Input.GetButton("Jump") && isgrounded)
+        {
+            currentVelocity.y = 9.8f;
+            isgrounded = false;
+        }
+        gameObject.GetComponent<Rigidbody2D>().velocity = currentVelocity;
     
           if (Input.GetMouseButtonDown(0))
         {
@@ -71,8 +80,8 @@ public class PlayerController : PhysicsBase
             dragVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - startPoint;
         }
     }
-    
-    public override void CollideHorizontal(Collider2D other)
+
+    public void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.CompareTag("lethal"))
         {
@@ -88,6 +97,23 @@ public class PlayerController : PhysicsBase
         {
             StartCoroutine(SlowDownSpeed(5f)); // after 5s back to normal speed
         }
+        
+        
+    }
+
+    public void OnCollisionStay2D(Collision2D other)
+    {
+        // is grounded handling
+        foreach (ContactPoint2D contact in other.contacts)
+        {
+            print(" hit " + contact.otherCollider.name);
+            if (Vector2.Angle(contact.normal, Vector2.up) < 45)
+            {
+                isgrounded = true;
+                // Visualize the contact point
+                Debug.DrawRay(contact.point, contact.normal, Color.white);
+            }
+        }    
     }
 
     // Visualizatin of Hearts decreasing
@@ -96,11 +122,6 @@ public class PlayerController : PhysicsBase
         Physics2D.IgnoreLayerCollision(6,7);
         yield return new WaitForSeconds(3);
         Physics2D.IgnoreLayerCollision(6,7, false);
-    }
-
-    public override void CollideVertical(Collider2D other)
-    {
-
     }
 
     void OnTriggerEnter2D(Collider2D other)
