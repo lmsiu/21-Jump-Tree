@@ -9,6 +9,11 @@ public class PlayerController : PhysicsBase
     private Vector2 startPoint;
     private Vector2 dragVector;
     public int maxDrag = 50;
+
+    //Player Animation
+    private Animator player_animator;
+
+
     // Shooting variables
     public float maxBulletSpeed = 40f;
 
@@ -23,6 +28,7 @@ public class PlayerController : PhysicsBase
     {
         Debug.Log("Starting game");
         currentSpeed = originalSpeed;
+        player_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,19 +36,32 @@ public class PlayerController : PhysicsBase
     {
         // moving
         desiredx = 0;
-        if (Input.GetAxis("Horizontal") > 0) desiredx = currentSpeed;
-        if (Input.GetAxis("Horizontal") < 0) desiredx = -currentSpeed;
+        if (Input.GetAxis("Horizontal") > 0) 
+        {
+            desiredx = currentSpeed;
+            GetComponent<SpriteRenderer>().flipX = true;
+           
+        }
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            desiredx = -currentSpeed;
+            GetComponent<SpriteRenderer>().flipX = false;
+            
+        }
+         
 
         if (Input.GetButton("Jump") && grounded) velocity.y = 8.5f;
     
-    
-          if (Input.GetMouseButtonDown(0))
+        // For Shooting Control    
+        if (Input.GetMouseButtonDown(0))
         {
             isMouseDragging = true;
             startPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         }
 
         // animate the player movement 
+        player_animator.SetFloat("MoveX", desiredx);
+  
 
         // Shooting Controll
         if (Input.GetMouseButtonUp(0))
