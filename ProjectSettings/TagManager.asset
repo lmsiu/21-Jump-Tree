@@ -9,6 +9,7 @@ TagManager:
   - seed
   - bullet
   - Undefined
+  - Sap
   layers:
   - Default
   - TransparentFX

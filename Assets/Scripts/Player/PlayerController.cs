@@ -23,6 +23,7 @@ public class PlayerController : PhysicsBase
     private float originalSpeed = 5f; // set original speed as 5
     private float currentSpeed;
 
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,8 @@ public class PlayerController : PhysicsBase
         player_animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+
+    // Update is  called once per frame
     void Update()
     {
         // moving
@@ -59,7 +61,7 @@ public class PlayerController : PhysicsBase
             startPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         }
 
-        // animate the player movement 
+        // Animate the player movement 
         player_animator.SetFloat("MoveX", desiredx);
   
 
@@ -98,9 +100,11 @@ public class PlayerController : PhysicsBase
             LifeCount.lives--;
             if(LifeCount.lives <= 0)
             {
-                Debug.Log("GAME OVER!"); 
+                PlayerManager.isGameOver = true;
+        
             }else{
                 StartCoroutine(getHurt());
+                
             }
         }
         else if (other.gameObject.CompareTag("Sap"))
@@ -113,7 +117,7 @@ public class PlayerController : PhysicsBase
     IEnumerator getHurt()
     {
         Physics2D.IgnoreLayerCollision(6,7);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         Physics2D.IgnoreLayerCollision(6,7, false);
     }
 
@@ -138,8 +142,4 @@ public class PlayerController : PhysicsBase
         yield return new WaitForSeconds(duration);
         currentSpeed = originalSpeed; 
     }
-
-    // for game over screen
-    //https://www.youtube.com/watch?v=0ZJPmjA5Hv0
-
 }
