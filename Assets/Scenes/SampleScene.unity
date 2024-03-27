@@ -2682,7 +2682,7 @@ MonoBehaviour:
   player: {fileID: 2005777457}
   playerPickedUp: 0
   velocity: {x: 0, y: 0}
-  smoothTime: 2
+  smoothTime: 1
 --- !u!61 &1505463178
 BoxCollider2D:
   m_ObjectHideFlags: 0
