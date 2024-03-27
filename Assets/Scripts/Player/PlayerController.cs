@@ -15,7 +15,7 @@ public class PlayerController : PhysicsBase
     public float damage = 20f;
     public float ttl = 3f;
 
-    private float originalSpeed = 3f; // set original speed as 3
+    private float originalSpeed = 5f; // set original speed as 5
     private float currentSpeed;
 
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class PlayerController : PhysicsBase
         if (Input.GetAxis("Horizontal") > 0) desiredx = currentSpeed;
         if (Input.GetAxis("Horizontal") < 0) desiredx = -currentSpeed;
 
-        if (Input.GetButton("Jump") && grounded) velocity.y = 6.5f;
+        if (Input.GetButton("Jump") && grounded) velocity.y = 8.5f;
     
     
           if (Input.GetMouseButtonDown(0))
