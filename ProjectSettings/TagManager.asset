@@ -9,6 +9,8 @@ TagManager:
   - seed
   - bullet
   - Sap
+  - test
+  - key
   layers:
   - Default
   - TransparentFX
