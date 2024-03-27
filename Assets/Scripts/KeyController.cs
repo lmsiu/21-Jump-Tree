@@ -32,7 +32,7 @@ public class KeyController : MonoBehaviour
 
     // once player has picked up the key
     private void OnTriggerEnter2D(Collider2D other){
-        if(!playerPickedUp && other.gameObject.CompareTag("test")){
+        if(!playerPickedUp && other.gameObject.CompareTag("Player")){
             playerPickedUp = true;
         }
 
