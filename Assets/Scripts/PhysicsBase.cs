@@ -38,12 +38,14 @@ public class PhysicsBase : MonoBehaviour
         {
             if (Mathf.Abs(hits[i].normal.x) > 0.3f && horizontal)
             {
+                if(!hits[i].collider.isTrigger)
                 collision = true;
                 CollideHorizontal(hits[i].collider);
             }
             if (Mathf.Abs(hits[i].normal.y) > 0.3f && !horizontal)
             {
                 if (hits[i].normal.y > 0.3f) grounded = true;
+                if(!hits[i].collider.isTrigger)
                 collision = true;
                 CollideVertical(hits[i].collider);
             }
