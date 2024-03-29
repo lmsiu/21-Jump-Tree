@@ -40,13 +40,13 @@ public class EnemyController : PhysicsBase
         }
     }
 
-    public override void CollideVertical(Collider2D other)
-    {
-            if(other.gameObject.CompareTag("bullet"))
-        {
-            Destroy(gameObject);
-            Debug.Log("verticle hit");
-        }
+    // public override void CollideVertical(Collider2D other)
+    // {
+    //         if(other.gameObject.CompareTag("bullet"))
+    //     {
+    //         Destroy(gameObject);
+    //         Debug.Log("verticle hit");
+    //     }
         
-    }
+    // }
 }
