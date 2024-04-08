@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
-     // Game Over
+    // Game Over
     public static bool isGameOver;
     public GameObject gameOverScreen;
 
-      private void Awake()
+    private void Awake()
     {
         isGameOver = false;
     }
@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (isGameOver == true)
         {
-        gameOverScreen.SetActive(true);
+            gameOverScreen.SetActive(true);
         }
     }
 
