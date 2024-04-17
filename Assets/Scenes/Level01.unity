@@ -3999,7 +3999,7 @@ MonoBehaviour:
   grounded: 0
   minMove: 2
   maxMove: 3
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 1532433547}
 --- !u!50 &1532433550
 Rigidbody2D:
   serializedVersion: 4
@@ -4942,6 +4942,10 @@ PrefabInstance:
     - target: {fileID: 1461312664750472801, guid: 4b5707bfeb23abf459d577d94a45df06, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 6.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176818926190866225, guid: 4b5707bfeb23abf459d577d94a45df06, type: 3}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5176818926190866225, guid: 4b5707bfeb23abf459d577d94a45df06, type: 3}
       propertyPath: m_Size.x

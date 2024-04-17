@@ -26,11 +26,10 @@ public class EnemyController : PhysicsBase
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x%minMove == 0){
-            //moving the left
-            spriteRenderer.flipX = true;
-        }else if(transform.position.x%maxMove == 0){
-            spriteRenderer.flipX = false;
+        if((Mathf.Abs(maxMove - transform.position.x) <= .1 && spriteRenderer.flipX == true)|| (Mathf.Abs(transform.position.x - minMove) <= .1 && spriteRenderer.flipX == false)) {
+            //flip 
+            spriteRenderer.flipX = !spriteRenderer.flipX ;
+            Debug.Log("flipped");
         }
 
         // move back and forth
