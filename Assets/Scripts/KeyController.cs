@@ -15,13 +15,14 @@ public class KeyController : MonoBehaviour
     void Start()
     {
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(playerPickedUp){
+        if (playerPickedUp)
+        {
             Vector3 offset = new Vector3(-1.5f, 1, 0); // if the key is right on the player, the player will slow down a lot
             transform.position = Vector2.SmoothDamp(transform.position, player.transform.position + offset, ref velocity, smoothTime);
 
@@ -31,8 +32,10 @@ public class KeyController : MonoBehaviour
     }
 
     // once player has picked up the key
-    private void OnTriggerEnter2D(Collider2D other){
-        if(!playerPickedUp && other.gameObject.CompareTag("Player")){
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!playerPickedUp && other.gameObject.CompareTag("Player"))
+        {
             playerPickedUp = true;
             Debug.Log("Key picked up");
         }

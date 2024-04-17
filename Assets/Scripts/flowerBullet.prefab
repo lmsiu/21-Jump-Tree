@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 559295361684154082}
   - component: {fileID: 8406773881157136030}
   - component: {fileID: 4370144334626200646}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flowerBullet
   m_TagString: bullet
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a48d24ee0736c413d8a2ba027c4d2f93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50f0c0238f8a4a21bd256f36908cdf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ttl: 0
+  ttl: 3
   owner: {fileID: 0}
   isPlayer: 0
   damage: 0

@@ -80,7 +80,11 @@ public class PlayerController : PhysicsBase
                     direction = -dragVector / maxDrag;
                 }
                 Vector2 velocity = direction * maxBulletSpeed;
-                gameObject.GetComponent<ShooterScript>().shoot(velocity, damage, true, ttl, gameObject);
+                if(BulletCount.seedCount > 0)
+                {
+                	gameObject.GetComponent<ShooterScript>().shoot(velocity, damage, true, ttl, gameObject);
+                	BulletCount.seedCount--;
+                }
             }
             isMouseDragging = false;
             dragVector = new Vector2(0, 0);
