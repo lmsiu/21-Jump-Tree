@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class LifeCount : MonoBehaviour
 {
-    public static int lives = 3;
+    //public static int lives = 3;
+    public PlayerStats lives;
 
     public Image[] hearts;
 
@@ -14,7 +15,7 @@ public class LifeCount : MonoBehaviour
 
     void Awake()
     {
-        lives = 3;
+        //lives.currentLifeCount = lives.MAX_LIFE;
     }
     // Update is called once per frame
     void Update()
@@ -23,7 +24,7 @@ public class LifeCount : MonoBehaviour
         {  
             img.sprite = emptyHeart;
         }
-        for (int i = 0; i < lives; i++)
+        for (int i = 0; i < lives.currentLifeCount; i++)
         {
             hearts[i].sprite = fullHeart;
         }

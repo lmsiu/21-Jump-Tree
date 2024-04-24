@@ -29,7 +29,7 @@ public class EnemyController : PhysicsBase
         if((Mathf.Abs(maxMove - transform.position.x) <= .1 && spriteRenderer.flipX == true)|| (Mathf.Abs(transform.position.x - minMove) <= .1 && spriteRenderer.flipX == false)) {
             //flip 
             spriteRenderer.flipX = !spriteRenderer.flipX ;
-            Debug.Log("flipped");
+            //Debug.Log("flipped");
         }
 
         // move back and forth

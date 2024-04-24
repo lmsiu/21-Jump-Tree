@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : PhysicsBase
 {
 
+    public LifeCount lifeCount;
     private bool isMouseDragging = false;
     private Vector2 startPoint;
     private Vector2 dragVector;
@@ -101,8 +102,8 @@ public class PlayerController : PhysicsBase
     {
         if(other.gameObject.CompareTag("lethal"))
         {
-            LifeCount.lives--;
-            if(LifeCount.lives <= 0)
+            lifeCount.lives.currentLifeCount--;
+            if(lifeCount.lives.currentLifeCount <= 0)
             {
                 PlayerManager.isGameOver = true;
         
