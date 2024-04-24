@@ -5179,6 +5179,7 @@ MonoBehaviour:
   gravityFactor: 1
   desiredx: 0
   grounded: 0
+  lifeCount: {fileID: 2005777463}
   maxDrag: 50
   maxBulletSpeed: 40
   damage: 20
@@ -5290,6 +5291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac6f23b1e734454d974e783f7645f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: {fileID: 11400000, guid: 4cf69d0cac6750049a28326b31c45448, type: 2}
   hearts:
   - {fileID: 1877986772}
   - {fileID: 105127677}
