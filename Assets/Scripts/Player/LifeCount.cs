@@ -15,7 +15,7 @@ public class LifeCount : MonoBehaviour
 
     void Awake()
     {
-        lives.currentLifeCount = lives.MAX_LIFE;
+        //lives.currentLifeCount = lives.MAX_LIFE;
     }
     // Update is called once per frame
     void Update()
