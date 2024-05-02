@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TreeController : MonoBehaviour
 {
     public bool locked;
+    public int nextLevel;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,11 @@ public class TreeController : MonoBehaviour
         if(other.gameObject.CompareTag("key"))
         {
             locked = false;
-            SceneManager.LoadScene("Level02");
+            // allows for the same script to be used for different levels
+            string nextLevelName = "Level0" + nextLevel;
+            SceneManager.LoadScene(nextLevelName);
+            Debug.Log("Loading scence " + nextLevelName);
+
         }
     }
 
