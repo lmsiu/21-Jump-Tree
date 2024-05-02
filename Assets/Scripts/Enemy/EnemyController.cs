@@ -10,7 +10,7 @@ public class EnemyController : PhysicsBase
     // Max position that the enemy can move to
     public float maxMove = 3f;
     // how much to move by
-    public static int MOVEAMOUNT = 3;
+    public int MOVEAMOUNT = 3;
     public SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
