@@ -2045,49 +2045,49 @@ MonoBehaviour:
   sounds:
   - name: GameOver
     clip: {fileID: 8300000, guid: 6b425d2f93e2e4d4bb455cd2d15eb040, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: 24300002, guid: 16e25c09c177f46838e0defe9d1a4127, type: 2}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: 87ad913633f56422797b1cde2f05b855, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: 24300002, guid: 16e25c09c177f46838e0defe9d1a4127, type: 2}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Seed
     clip: {fileID: 8300000, guid: 2cb68e000c1994416913909c71e180c6, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: 24300002, guid: 16e25c09c177f46838e0defe9d1a4127, type: 2}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Shoot
     clip: {fileID: 8300000, guid: 84a162ba6655f429da398670552f54ed, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: 24300002, guid: 16e25c09c177f46838e0defe9d1a4127, type: 2}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Checkpoint
     clip: {fileID: 8300000, guid: bc33d7f02ee4241b2b3a9183044beb1d, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: 24300002, guid: 16e25c09c177f46838e0defe9d1a4127, type: 2}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Key
     clip: {fileID: 8300000, guid: 0a0ae128ed744455eab9a780f6ba085e, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: 24300002, guid: 16e25c09c177f46838e0defe9d1a4127, type: 2}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Hit
     clip: {fileID: 8300000, guid: 2c5ff761b85bb4fc78e289ecc9e075bb, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: 24300002, guid: 16e25c09c177f46838e0defe9d1a4127, type: 2}
     volume: 1
     pitch: 1
     loop: 0
