@@ -53,13 +53,19 @@ public class PlayerController : PhysicsBase
         }
          
 
-        if (Input.GetButton("Jump") && grounded) velocity.y = 8.5f;
-    
+        if (Input.GetButton("Jump") && grounded)
+        {
+            velocity.y = 8.5f;
+            AudioManager.instance.Play("Jump"); 
+        }
+        
+
         // For Shooting Control    
         if (Input.GetMouseButtonDown(0))
         {
             isMouseDragging = true;
             startPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            AudioManager.instance.Play("Shoot");
         }
 
         // Animate the player movement 
@@ -106,6 +112,7 @@ public class PlayerController : PhysicsBase
             if(lifeCount.lives.currentLifeCount <= 0)
             {
                 PlayerManager.isGameOver = true;
+                AudioManager.instance.Play("GameOver");
         
             }else{
                 StartCoroutine(getHurt());
@@ -124,6 +131,7 @@ public class PlayerController : PhysicsBase
         Physics2D.IgnoreLayerCollision(6,7);
         yield return new WaitForSeconds(1);
         Physics2D.IgnoreLayerCollision(6,7, false);
+        AudioManager.instance.Play("Hit");
     }
 
     public override void CollideVertical(Collider2D other)
@@ -137,6 +145,7 @@ public class PlayerController : PhysicsBase
         {
             BulletCount.seedCount++;
             Destroy(other.gameObject);
+            AudioManager.instance.Play("Seed");
         }
 
     }
