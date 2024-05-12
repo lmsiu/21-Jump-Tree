@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: hearts.Array.data[2]
       value: 
       objectReference: {fileID: 803371449}
+    - target: {fileID: 1356647338776949354, guid: 7be32814d740f2542a3ccf11192fef9f, type: 3}
+      propertyPath: seedText
+      value: 
+      objectReference: {fileID: 503099266}
     - target: {fileID: 3523704779318190217, guid: 7be32814d740f2542a3ccf11192fef9f, type: 3}
       propertyPath: grounded
       value: 0
@@ -396,6 +400,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
+--- !u!114 &503099266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3234760680650978167, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
+  m_PrefabInstance: {fileID: 503099265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &537142431
 GameObject:
   m_ObjectHideFlags: 0
