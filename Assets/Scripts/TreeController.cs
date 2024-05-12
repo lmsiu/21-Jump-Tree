@@ -26,7 +26,7 @@ public class TreeController : MonoBehaviour
             locked = false;
             // allows for the same script to be used for different levels
             string nextLevelName = "Level0" + nextLevel;
-            AudioManager.instance.Play("Checkpoint");
+            //AudioManager.instance.Play("Checkpoint");
             SceneManager.LoadScene(nextLevelName);
             Debug.Log("Loading scence " + nextLevelName);
 
