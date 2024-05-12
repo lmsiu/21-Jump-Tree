@@ -37,7 +37,7 @@ public class KeyController : MonoBehaviour
         if (!playerPickedUp && other.gameObject.CompareTag("Player"))
         {
             playerPickedUp = true;
-            AudioManager.instance.Play("Key");
+            //AudioManager.instance.Play("Key");
             Debug.Log("Key picked up");
         }
 
