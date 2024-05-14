@@ -6,7 +6,9 @@ public class AudioManager : MonoBehaviour {
 
 	public static AudioManager instance;
 
-	public Sound[] sounds;
+	public Sound[] musicSounds, sfxSounds;
+	public AudioSource musicSource, sfxSource;
+
 
 	void Awake ()
 	{
@@ -20,26 +22,34 @@ public class AudioManager : MonoBehaviour {
 			DontDestroyOnLoad(gameObject);
 		}
 
-		foreach (Sound s in sounds)
-		{
-			s.source = gameObject.AddComponent<AudioSource>();
-			s.source.clip = s.clip;
-			s.source.volume = s.volume;
-			s.source.pitch = s.pitch;
-			s.source.loop = s.loop;
-			s.source.outputAudioMixerGroup = s.mixer;
-		}
 	}
 
-	public void Play(string sound)
+    private void Start()
+    {
+		PlayBGM("bgm");
+    }
+
+    public void PlayBGM(string name)
 	{
-		Sound s = Array.Find(sounds, item => item.name == sound);
-		s.source.Play();
-	}
-	public void Stop(string sound)
-	{
-		Sound s = Array.Find(sounds, item => item.name == sound);
-		s.source.Stop();
+		Sound s = Array.Find(musicSounds, item => item.name == name);
+		musicSource.clip = s.clip;
+		musicSource.Play();
 	}
 
+	public void PlaySFX(string name)
+	{
+		Sound s = Array.Find(sfxSounds, item => item.name == name);
+		sfxSource.PlayOneShot(s.clip);
+	}
+
+
+	public void BGMVolume(float volume)
+    {
+		musicSource.volume = volume;
+    }
+
+	public void SFXVolume(float volume)
+	{
+		sfxSource.volume = volume;
+	}
 }

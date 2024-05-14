@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TreeController : MonoBehaviour
 {
     public bool locked;
-    public int nextLevel;
+    public string nextLevel;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +25,10 @@ public class TreeController : MonoBehaviour
         {
             locked = false;
             // allows for the same script to be used for different levels
-            string nextLevelName = "Level0" + nextLevel;
-            AudioManager.instance.Play("Checkpoint");
-            SceneManager.LoadScene(nextLevelName);
-            Debug.Log("Loading scence " + nextLevelName);
+            //string nextLevelName = "Level0" + nextLevel;
+            AudioManager.instance.PlaySFX("Checkpoint");
+            SceneManager.LoadScene(nextLevel);
+            Debug.Log("Loading scence " + nextLevel);
 
         }
     }
