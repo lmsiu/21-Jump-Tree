@@ -4128,6 +4128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 5796984733867929804, guid: 6d48b12a6aa88e94aa9f6667154a12e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.46
+      objectReference: {fileID: 0}
     - target: {fileID: 7231294088681410604, guid: 6d48b12a6aa88e94aa9f6667154a12e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 41.78
