@@ -3,17 +3,45 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-
 public class MenuEvents : MonoBehaviour
 {
-    public Slider VolumeSlider;
-    public AudioMixer mixer;
 
-    public void SetVolume()
+    [SerializeField] private AudioMixer myMixer;
+    [SerializeField] private Slider _bgmSlider;
+    [SerializeField] private Slider _sfxSlider;
+
+    /*
+    public void BGMVolume()
     {
-        mixer.SetFloat("volume", VolumeSlider.value);
-        
+        AudioManager.instance.BGMVolume(_bgmSlider.value);
     }
+
+    public void SFXVolume()
+    {
+        AudioManager.instance.SFXVolume(_sfxSlider.value);
+    }
+    */
+
+    private void Start()
+    {
+        SetSFXVolume();
+        SetBGMVolume();
+    }
+    
+
+    public void SetSFXVolume()
+    {
+        float volume = _sfxSlider.value;
+        myMixer.SetFloat("sfx", volume);
+    }
+     
+     
+    public void SetBGMVolume()
+    {
+        float volume = _bgmSlider.value;
+        myMixer.SetFloat("bgm", volume);
+    }
+    
 
     public void LoadLevel(int index)
     {
