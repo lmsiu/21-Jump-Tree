@@ -4550,9 +4550,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6681977133894811161, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681977133894811161, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681977133894811161, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 448103133}
+    - target: {fileID: 6681977133894811161, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681977133894811161, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681977133894811161, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7319217494808750127, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
@@ -4591,6 +4611,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 6863894525152140047}
+  - {fileID: 448103134}
   - {fileID: 6127272512057306326}
   - {fileID: 1532433548}
   - {fileID: 4464352089377651933}
@@ -4598,7 +4619,6 @@ SceneRoots:
   - {fileID: 696455580}
   - {fileID: 1457636892}
   - {fileID: 1918307510}
-  - {fileID: 448103134}
   - {fileID: 370863952}
   - {fileID: 1291124255}
   - {fileID: 3607570808117378937}
