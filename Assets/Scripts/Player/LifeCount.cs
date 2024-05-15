@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class LifeCount : MonoBehaviour
 {
-    //public static int lives = 3;
     public PlayerStats lives;
 
     public Image[] hearts;

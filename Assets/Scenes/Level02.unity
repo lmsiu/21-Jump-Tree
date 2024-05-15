@@ -355,6 +355,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1596414315180818165, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1411245721}
     - target: {fileID: 1946966030653025640, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -369,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1946966030653025640, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.28235295
       objectReference: {fileID: 0}
     - target: {fileID: 1946966030653025640, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
       propertyPath: m_Enabled
@@ -474,10 +478,10 @@ PrefabInstance:
     - target: {fileID: 6681977133894811161, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1629396160}
+      objectReference: {fileID: 11500000, guid: a75c26631c8a64f2caed15eb170a811e, type: 3}
     - target: {fileID: 6681977133894811161, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReplayLevel
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6681977133894811161, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -704,6 +708,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1461312664750472801, guid: 4b5707bfeb23abf459d577d94a45df06, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461312664750472801, guid: 4b5707bfeb23abf459d577d94a45df06, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6.72
+      objectReference: {fileID: 0}
     - target: {fileID: 5176818926190866225, guid: 4b5707bfeb23abf459d577d94a45df06, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1532,7 +1544,7 @@ Transform:
   m_GameObject: {fileID: 1227057156}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4801,7 +4813,7 @@ Transform:
   m_GameObject: {fileID: 1247951938}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.46699595, y: -0.4414198, z: 12}
+  m_LocalPosition: {x: -0.46699595, y: -0.2, z: 104.8}
   m_LocalScale: {x: 32.505035, y: 23.669008, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4843,6 +4855,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!20 &1411245721 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4596424883117721478, guid: 7be32814d740f2542a3ccf11192fef9f, type: 3}
+  m_PrefabInstance: {fileID: 1612931816}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1413931395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5902,6 +5919,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5176818926190866225, guid: 4b5707bfeb23abf459d577d94a45df06, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6098180468519980141, guid: 4b5707bfeb23abf459d577d94a45df06, type: 3}
       propertyPath: gravityFactor
       value: 0

@@ -105,6 +105,7 @@ MonoBehaviour:
   grounded: 0
   minMove: 2
   maxMove: 3
+  MOVEAMOUNT: 3
   spriteRenderer: {fileID: 5176818926190866225}
 --- !u!50 &7169399197576994924
 Rigidbody2D:
