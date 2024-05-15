@@ -327,6 +327,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7162583515117361185, guid: 7be32814d740f2542a3ccf11192fef9f, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162583515117361185, guid: 7be32814d740f2542a3ccf11192fef9f, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162583515117361185, guid: 7be32814d740f2542a3ccf11192fef9f, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162583515117361185, guid: 7be32814d740f2542a3ccf11192fef9f, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7573395376340203889, guid: 7be32814d740f2542a3ccf11192fef9f, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1496,7 +1512,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.46699595, y: -0.4414198, z: 12}
-  m_LocalScale: {x: 32.505035, y: 23.669008, z: 1}
+  m_LocalScale: {x: 46, y: 24, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1272283382}
