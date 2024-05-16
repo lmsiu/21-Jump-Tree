@@ -118,10 +118,9 @@ public class PlayerController : PhysicsBase
             {
                 PlayerManager.isGameOver = true;
                 AudioManager.instance.PlaySFX("GameOver");
-        
+                // gameObject.SetActive(false);
             }else{
                 StartCoroutine(getHurt());
-                
             }
         }
         else if (other.gameObject.CompareTag("Sap"))
