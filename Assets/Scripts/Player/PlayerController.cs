@@ -102,7 +102,12 @@ public class PlayerController : PhysicsBase
         {
             dragVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - startPoint;
         }
+
+
     }
+
+
+
     
     public override void CollideHorizontal(Collider2D other)
     {
