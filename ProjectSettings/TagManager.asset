@@ -13,6 +13,7 @@ TagManager:
   - test
   - key
   - Tree
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
+  - Floor
   - 
   - 
   - 
