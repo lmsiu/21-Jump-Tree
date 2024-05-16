@@ -2836,6 +2836,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7319217494808750127, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7319217494808750127, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8828467334025373203, guid: fcd43b7dc619b064a9a2016eb9315356, type: 3}
       propertyPath: m_Name
       value: CanvasPrefab
