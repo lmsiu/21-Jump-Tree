@@ -149,6 +149,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &195976624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3567832522112109409, guid: 7be32814d740f2542a3ccf11192fef9f, type: 3}
+  m_PrefabInstance: {fileID: 448868738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &220828749 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7695216660784370773, guid: 4b5707bfeb23abf459d577d94a45df06, type: 3}
@@ -3249,7 +3254,7 @@ PrefabInstance:
     - target: {fileID: 5628020826280859776, guid: df6b536e5134cca4d91692ce17bd2261, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 195976624}
     - target: {fileID: 6323091361792010854, guid: df6b536e5134cca4d91692ce17bd2261, type: 3}
       propertyPath: m_LocalPosition.x
       value: 101.92328
@@ -3305,7 +3310,7 @@ PrefabInstance:
     - target: {fileID: 8991546394477053004, guid: df6b536e5134cca4d91692ce17bd2261, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 195976624}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
