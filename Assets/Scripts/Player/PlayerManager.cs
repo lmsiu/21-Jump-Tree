@@ -31,6 +31,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ReplayLevel()
     {
+        Debug.Log("Replay clicked");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
