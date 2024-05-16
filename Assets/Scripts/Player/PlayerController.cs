@@ -24,7 +24,7 @@ public class PlayerController : PhysicsBase
     private float originalSpeed = 5f; // set original speed as 5
     private float currentSpeed;
 
-   
+      
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +59,7 @@ public class PlayerController : PhysicsBase
             AudioManager.instance.PlaySFX("Jump"); 
         }
         
-
+    
         // For Shooting Control    
         if (Input.GetMouseButtonDown(0))
         {
@@ -102,7 +102,19 @@ public class PlayerController : PhysicsBase
         {
             dragVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - startPoint;
         }
+
+
     }
+
+    // Player falls down
+    void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.tag == "Floor"){
+            Debug.Log("Player hits the floor");
+            PlayerManager.isGameOver = true;
+            AudioManager.instance.PlaySFX("GameOver");
+        }
+    }
+
     
     public override void CollideHorizontal(Collider2D other)
     {
@@ -113,10 +125,9 @@ public class PlayerController : PhysicsBase
             {
                 PlayerManager.isGameOver = true;
                 AudioManager.instance.PlaySFX("GameOver");
-        
+                // gameObject.SetActive(false);
             }else{
                 StartCoroutine(getHurt());
-                
             }
         }
         else if (other.gameObject.CompareTag("Sap"))
