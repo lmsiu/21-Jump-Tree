@@ -9,7 +9,7 @@
 ## Demo 
 Click on the video to start.
 <br>
-[![Video Demo]([https://img.youtube.com/vi/UD8WJU7c518/0.jpg)](https://youtu.be/zYqT30QFiT0?si=KrKUWJCQDvndWd7Y)
+[![Video Demo](https://i9.ytimg.com/vi/zYqT30QFiT0/mq1.jpg)](https://youtu.be/zYqT30QFiT0?si=KrKUWJCQDvndWd7Y)
 
 
 
